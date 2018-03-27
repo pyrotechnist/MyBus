@@ -16,8 +16,8 @@ public class RepositoryModule {
 
     @Provides
     @Singleton
-    ScheduleRepository providesScheduleRepository() {
-        return new ScheduleRepository();
+    RatpRepository providesRatpRepository() {
+        return new RatpRepository();
     }
 
 

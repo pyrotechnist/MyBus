@@ -6,5 +6,5 @@ package com.example.longyuan.mybus.utils;
 
 public class Constant {
 
-    public static final String ROOT_URL = "https://api-ratp.pierre-grimaud.fr/v3/schedules/";
+    public static final String ROOT_URL = "https://api-ratp.pierre-grimaud.fr/v3/";
 }

@@ -1,6 +1,7 @@
 package com.example.longyuan.mybus.network.api;
 
-import com.example.longyuan.mybus.pojo.SchedulesResponse;
+import com.example.longyuan.mybus.pojo.metro.MetroLinesResponse;
+import com.example.longyuan.mybus.pojo.schedule.SchedulesResponse;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -13,8 +14,10 @@ import rx.Observable;
 public interface RatpAPI {
 
 
-    @GET("{path}")
+    @GET("schedules/{path}")
     Observable<SchedulesResponse> getSchedules(@Path(value = "path", encoded = true) String path);
 
+    @GET("lines/metros")
+    Observable<MetroLinesResponse> getMetros();
 
 }

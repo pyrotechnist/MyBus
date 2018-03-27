@@ -1,10 +1,12 @@
-package com.example.longyuan.mybus.pojo;
+package com.example.longyuan.mybus.pojo.metro;
 
 import javax.annotation.Generated;
+
+import com.example.longyuan.mybus.pojo.Metadata;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("com.robohorse.robopojogenerator")
-public class SchedulesResponse{
+public class MetroLinesResponse{
 
 	@SerializedName("result")
 	private Result result;
@@ -31,7 +33,7 @@ public class SchedulesResponse{
 	@Override
  	public String toString(){
 		return 
-			"SchedulesResponse{" + 
+			"MetroLinesResponse{" + 
 			"result = '" + result + '\'' + 
 			",_metadata = '" + metadata + '\'' + 
 			"}";

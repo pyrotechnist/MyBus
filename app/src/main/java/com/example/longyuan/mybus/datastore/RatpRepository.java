@@ -12,12 +12,12 @@ import rx.schedulers.Schedulers;
  * Created by LONGYUAN on 2018/3/25.
  */
 
-public class ScheduleRepository implements DataStore {
+public class RatpRepository implements DataStore {
 
     @Inject
     RatpAPI mRatpAPI;
 
-    public ScheduleRepository() {
+    public RatpRepository() {
         App.getAppComponent().inject(this);
     }
 
@@ -28,7 +28,17 @@ public class ScheduleRepository implements DataStore {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))
-                .subscribe(data ->  loadSchedulesCallback.onSchedulesLoaded(data.getResult().getSchedules()),throwable -> loadSchedulesCallback.onError(throwable.getLocalizedMessage()));
+                .subscribe(data ->  loadSchedulesCallback.onSchedulesLoaded(data.getResult()),throwable -> loadSchedulesCallback.onError(throwable.getLocalizedMessage()));
 
+    }
+
+    @Override
+    public void loadMetros(LoadMetrosCallback loadMetrosCallback) {
+
+        mRatpAPI.getMetros()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                // .map(data -> checkLatestPOstList(data))
+                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
     }
 }

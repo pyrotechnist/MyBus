@@ -1,4 +1,4 @@
-package com.example.longyuan.mybus.pojo;
+package com.example.longyuan.mybus.pojo.schedule;
 
 import java.util.List;
 import javax.annotation.Generated;

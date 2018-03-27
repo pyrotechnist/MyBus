@@ -1,8 +1,9 @@
 package com.example.longyuan.mybus;
 
 
+import com.example.longyuan.mybus.datastore.RatpRepository;
 import com.example.longyuan.mybus.datastore.RepositoryModule;
-import com.example.longyuan.mybus.datastore.ScheduleRepository;
+import com.example.longyuan.mybus.metro.MetroPresenter;
 import com.example.longyuan.mybus.network.injection.NetworkModule;
 
 import javax.inject.Singleton;
@@ -19,6 +20,8 @@ public interface AppComponent {
 
     void inject(MainPresenter mainPresenter);
 
-    void inject(ScheduleRepository scheduleRepository);
+    void inject(MetroPresenter metroPresenter);
+
+    void inject(RatpRepository ratpRepository);
 
 }

@@ -1,11 +1,9 @@
 package com.example.longyuan.mybus;
 
 import com.example.longyuan.mybus.datastore.DataStore;
-import com.example.longyuan.mybus.datastore.ScheduleRepository;
-import com.example.longyuan.mybus.pojo.SchedulesItem;
+import com.example.longyuan.mybus.datastore.RatpRepository;
+import com.example.longyuan.mybus.pojo.schedule.Result;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -21,7 +19,7 @@ public class MainPresenter implements MainContract.Presenter{
     private MainContract.View mView;
 
     @Inject
-    protected ScheduleRepository mScheduleRepository;
+    protected RatpRepository mRatpRepository;
 
 
     public MainPresenter(MainContract.View view) {
@@ -51,11 +49,11 @@ public class MainPresenter implements MainContract.Presenter{
 
         schedulesRequest.setType("bus");
 
-        mScheduleRepository.loadSchedules(new DataStore.LoadSchedulesCallback() {
+        mRatpRepository.loadSchedules(new DataStore.LoadSchedulesCallback() {
             @Override
-            public void onSchedulesLoaded(List<SchedulesItem> schedulesItems) {
+            public void onSchedulesLoaded(Result result) {
 
-                String test = schedulesItems.get(0).getMessage();
+                mView.updateData(result);
             }
 
             @Override
