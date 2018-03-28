@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.longyuan.mybus.metro.MetroActivity;
-import com.example.longyuan.mybus.pojo.schedule.Result;
+import com.example.longyuan.mybus.pojo.schedule.SchedulesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 import butterknife.ButterKnife;
@@ -76,9 +76,9 @@ public class MainFragment extends Fragment implements MainContract.View{
 
 
     @Override
-    public void updateData(Result result) {
-        //mTextView.setText(result.getSchedules().get(0).getMessage());
-        //mTextView2.setText(result.getSchedules().get(1).getMessage());
+    public void updateData(SchedulesResult schedulesResult) {
+        //mTextView.setText(schedulesResult.getSchedules().get(0).getMessage());
+        //mTextView2.setText(schedulesResult.getSchedules().get(1).getMessage());
     }
 
     @Override

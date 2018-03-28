@@ -2,7 +2,7 @@ package com.example.longyuan.mybus;
 
 import com.example.longyuan.mybus.datastore.DataStore;
 import com.example.longyuan.mybus.datastore.RatpRepository;
-import com.example.longyuan.mybus.pojo.schedule.Result;
+import com.example.longyuan.mybus.pojo.schedule.SchedulesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 import javax.inject.Inject;
@@ -51,9 +51,9 @@ public class MainPresenter implements MainContract.Presenter{
 
         mRatpRepository.loadSchedules(new DataStore.LoadSchedulesCallback() {
             @Override
-            public void onSchedulesLoaded(Result result) {
+            public void onSchedulesLoaded(SchedulesResult schedulesResult) {
 
-                mView.updateData(result);
+                mView.updateData(schedulesResult);
             }
 
             @Override

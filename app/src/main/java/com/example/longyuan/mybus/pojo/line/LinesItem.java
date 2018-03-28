@@ -1,4 +1,4 @@
-package com.example.longyuan.mybus.pojo;
+package com.example.longyuan.mybus.pojo.line;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;

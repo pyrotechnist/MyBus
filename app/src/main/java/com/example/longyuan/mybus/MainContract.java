@@ -1,6 +1,6 @@
 package com.example.longyuan.mybus;
 
-import com.example.longyuan.mybus.pojo.schedule.Result;
+import com.example.longyuan.mybus.pojo.schedule.SchedulesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 /**
@@ -14,7 +14,7 @@ public interface MainContract {
         void setPresenter(Presenter presenter);
 
 
-        void updateData(Result result);
+        void updateData(SchedulesResult schedulesResult);
 
         void errorToast(String error);
 

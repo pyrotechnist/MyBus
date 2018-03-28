@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Result{
+public class SchedulesResult {
 
 	@SerializedName("schedules")
 	private List<SchedulesItem> schedules;
@@ -21,7 +21,7 @@ public class Result{
 	@Override
  	public String toString(){
 		return 
-			"Result{" + 
+			"SchedulesResult{" +
 			"schedules = '" + schedules + '\'' + 
 			"}";
 		}

@@ -8,18 +8,18 @@ import com.google.gson.annotations.SerializedName;
 @Generated("com.robohorse.robopojogenerator")
 public class SchedulesResponse{
 
-	@SerializedName("result")
-	private Result result;
+	@SerializedName("mSchedulesResult")
+	private SchedulesResult mSchedulesResult;
 
 	@SerializedName("_metadata")
 	private Metadata metadata;
 
-	public void setResult(Result result){
-		this.result = result;
+	public void setSchedulesResult(SchedulesResult schedulesResult){
+		this.mSchedulesResult = schedulesResult;
 	}
 
-	public Result getResult(){
-		return result;
+	public SchedulesResult getSchedulesResult(){
+		return mSchedulesResult;
 	}
 
 	public void setMetadata(Metadata metadata){
@@ -34,7 +34,7 @@ public class SchedulesResponse{
  	public String toString(){
 		return 
 			"SchedulesResponse{" + 
-			"result = '" + result + '\'' + 
+			"mSchedulesResult = '" + mSchedulesResult + '\'' +
 			",_metadata = '" + metadata + '\'' + 
 			"}";
 		}

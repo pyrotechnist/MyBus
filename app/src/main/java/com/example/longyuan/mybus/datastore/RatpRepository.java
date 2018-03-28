@@ -28,7 +28,7 @@ public class RatpRepository implements DataStore {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))
-                .subscribe(data ->  loadSchedulesCallback.onSchedulesLoaded(data.getResult()),throwable -> loadSchedulesCallback.onError(throwable.getLocalizedMessage()));
+                .subscribe(data ->  loadSchedulesCallback.onSchedulesLoaded(data.getSchedulesResult()), throwable -> loadSchedulesCallback.onError(throwable.getLocalizedMessage()));
 
     }
 
@@ -36,6 +36,26 @@ public class RatpRepository implements DataStore {
     public void loadMetros(LoadMetrosCallback loadMetrosCallback) {
 
         mRatpAPI.getMetros()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                // .map(data -> checkLatestPOstList(data))
+                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
+    }
+
+    @Override
+    public void loadBus(LoadMetrosCallback loadMetrosCallback) {
+
+        mRatpAPI.getBus()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                // .map(data -> checkLatestPOstList(data))
+                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
+    }
+
+    @Override
+    public void loadTramways(LoadMetrosCallback loadMetrosCallback) {
+
+        mRatpAPI.getTramways()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))

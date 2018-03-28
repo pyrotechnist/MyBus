@@ -1,24 +1,25 @@
-package com.example.longyuan.mybus.pojo.metro;
+package com.example.longyuan.mybus.pojo.line;
 
 import javax.annotation.Generated;
 
 import com.example.longyuan.mybus.pojo.Metadata;
+import com.example.longyuan.mybus.pojo.line.LinesResult;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("com.robohorse.robopojogenerator")
-public class MetroLinesResponse{
+public class LinesResponse {
 
 	@SerializedName("result")
-	private Result result;
+	private LinesResult result;
 
 	@SerializedName("_metadata")
 	private Metadata metadata;
 
-	public void setResult(Result result){
+	public void setResult(LinesResult result){
 		this.result = result;
 	}
 
-	public Result getResult(){
+	public LinesResult getResult(){
 		return result;
 	}
 
@@ -33,7 +34,7 @@ public class MetroLinesResponse{
 	@Override
  	public String toString(){
 		return 
-			"MetroLinesResponse{" + 
+			"LinesResponse{" +
 			"result = '" + result + '\'' + 
 			",_metadata = '" + metadata + '\'' + 
 			"}";

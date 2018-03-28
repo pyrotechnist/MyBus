@@ -4,7 +4,7 @@ import com.example.longyuan.mybus.App;
 import com.example.longyuan.mybus.MainContract;
 import com.example.longyuan.mybus.datastore.DataStore;
 import com.example.longyuan.mybus.datastore.RatpRepository;
-import com.example.longyuan.mybus.pojo.metro.Result;
+import com.example.longyuan.mybus.pojo.line.LinesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 import javax.inject.Inject;
@@ -39,10 +39,10 @@ public class MetroPresenter implements MetroContract.Presenter {
     @Override
     public void loadMetros() {
 
-        mRatpRepository.loadMetros(new DataStore.LoadMetrosCallback() {
+        mRatpRepository.loadTramways(new DataStore.LoadMetrosCallback() {
             @Override
-            public void onMetrosLoaded(Result result) {
-                String test = result.getMetros().get(0).getName();
+            public void onMetrosLoaded(LinesResult result) {
+                String test = result.getLines().get(0).getName();
             }
 
             @Override
