@@ -26,7 +26,5 @@ public interface MainContract {
 
         void loadSchedules(SchedulesRequest schedulesRequest);
 
-
-
     }
 }

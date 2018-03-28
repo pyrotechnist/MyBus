@@ -7,12 +7,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.longyuan.mybus.metro.MetroActivity;
 import com.example.longyuan.mybus.pojo.schedule.SchedulesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by LONGYUAN on 2018/3/25.
@@ -45,11 +47,13 @@ public class MainFragment extends Fragment implements MainContract.View{
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),MetroActivity.class);
+                //Intent intent = new Intent(getContext(),MetroActivity.class);
 
                // intent.putExtra(EXTRA_VIDEO_ID,item.getVideoId());
 
-                getContext().startActivity(intent);
+               // getContext().startActivity(intent);
+
+                Toast.makeText(getContext(),"view",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -83,6 +87,14 @@ public class MainFragment extends Fragment implements MainContract.View{
 
     @Override
     public void errorToast(String error) {
+
+    }
+
+    @OnClick(R.id.imageView_tramway)
+    public void submit(View view) {
+        // TODO submit data to server...
+        //Toast.makeText(getContext(),"tramway",Toast.LENGTH_LONG).show();
+
 
     }
 }
