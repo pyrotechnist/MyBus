@@ -27,4 +27,6 @@ public interface RatpAPI {
     Observable<LinesResponse> getTramways();
 
 
+    @GET("stations/{type}/{code}")
+    Observable<LinesResponse> getStations(@Path("type") String type,@Path("code") String code);
 }

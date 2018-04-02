@@ -3,7 +3,7 @@ package com.example.longyuan.mybus;
 
 import com.example.longyuan.mybus.datastore.RatpRepository;
 import com.example.longyuan.mybus.datastore.RepositoryModule;
-import com.example.longyuan.mybus.metro.MetroPresenter;
+import com.example.longyuan.mybus.line.LinePresenter;
 import com.example.longyuan.mybus.network.injection.NetworkModule;
 
 import javax.inject.Singleton;
@@ -20,7 +20,7 @@ public interface AppComponent {
 
     void inject(MainPresenter mainPresenter);
 
-    void inject(MetroPresenter metroPresenter);
+    void inject(LinePresenter linePresenter);
 
     void inject(RatpRepository ratpRepository);
 

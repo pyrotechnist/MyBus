@@ -33,32 +33,32 @@ public class RatpRepository implements DataStore {
     }
 
     @Override
-    public void loadMetros(LoadMetrosCallback loadMetrosCallback) {
+    public void loadMetros(LoadLinesCallback loadLinesCallback) {
 
         mRatpAPI.getMetros()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))
-                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
+                .subscribe(data ->  loadLinesCallback.onLinesLoaded(data.getResult()), throwable -> loadLinesCallback.onError(throwable.getLocalizedMessage()));
     }
 
     @Override
-    public void loadBus(LoadMetrosCallback loadMetrosCallback) {
+    public void loadBus(LoadLinesCallback loadLinesCallback) {
 
         mRatpAPI.getBus()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))
-                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
+                .subscribe(data ->  loadLinesCallback.onLinesLoaded(data.getResult()), throwable -> loadLinesCallback.onError(throwable.getLocalizedMessage()));
     }
 
     @Override
-    public void loadTramways(LoadMetrosCallback loadMetrosCallback) {
+    public void loadTramways(LoadLinesCallback loadLinesCallback) {
 
         mRatpAPI.getTramways()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 // .map(data -> checkLatestPOstList(data))
-                .subscribe(data ->  loadMetrosCallback.onMetrosLoaded(data.getResult()),throwable -> loadMetrosCallback.onError(throwable.getLocalizedMessage()));
+                .subscribe(data ->  loadLinesCallback.onLinesLoaded(data.getResult()), throwable -> loadLinesCallback.onError(throwable.getLocalizedMessage()));
     }
 }

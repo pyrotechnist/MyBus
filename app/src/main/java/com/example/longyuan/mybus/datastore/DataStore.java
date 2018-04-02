@@ -17,9 +17,9 @@ public interface DataStore {
 
     }
 
-    interface LoadMetrosCallback {
+    interface LoadLinesCallback {
 
-        void onMetrosLoaded(LinesResult result);
+        void onLinesLoaded(LinesResult result);
 
         void onError(String error);
 
@@ -28,10 +28,10 @@ public interface DataStore {
     void loadSchedules(LoadSchedulesCallback loadSchedulesCallback,String path);
 
 
-    void loadMetros(LoadMetrosCallback loadMetrosCallback);
+    void loadMetros(LoadLinesCallback loadLinesCallback);
 
-    void loadBus(LoadMetrosCallback loadMetrosCallback);
+    void loadBus(LoadLinesCallback loadLinesCallback);
 
-    void loadTramways(LoadMetrosCallback loadMetrosCallback);
+    void loadTramways(LoadLinesCallback loadLinesCallback);
 
 }

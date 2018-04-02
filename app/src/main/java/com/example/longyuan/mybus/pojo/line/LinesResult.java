@@ -1,5 +1,7 @@
 package com.example.longyuan.mybus.pojo.line;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 import javax.annotation.Generated;
@@ -7,6 +9,7 @@ import javax.annotation.Generated;
 @Generated("com.robohorse.robopojogenerator")
 public class LinesResult {
 
+	@SerializedName(value="bus", alternate={"tramways", "metros","rers"})
 	private List<LinesItem> lines;
 
 	public List<LinesItem> getLines() {
@@ -21,7 +24,7 @@ public class LinesResult {
  	public String toString(){
 		return 
 			"LinesResult{" +
-			"metros = '" + lines + '\'' +
+			"lines = '" + lines + '\'' +
 			"}";
 		}
 }

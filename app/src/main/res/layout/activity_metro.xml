@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.longyuan.mybus.metro.MetroActivity">
+    tools:context="com.example.longyuan.mybus.line.LineActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,13 +20,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <fragment
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/metro_fragment"
-        android:name="com.example.longyuan.mybus.metro.MetroFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:layout="@layout/frag_metro" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
     <android.support.design.widget.FloatingActionButton

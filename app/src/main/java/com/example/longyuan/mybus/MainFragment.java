@@ -9,12 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.longyuan.mybus.metro.MetroActivity;
+import com.example.longyuan.mybus.line.LineActivity;
 import com.example.longyuan.mybus.pojo.schedule.SchedulesResult;
 import com.example.longyuan.mybus.pojo.request.SchedulesRequest;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.example.longyuan.mybus.line.LineActivity.EXTRA_LINE_TYPE;
+import static com.example.longyuan.mybus.utils.enums.LineType.BUS;
+import static com.example.longyuan.mybus.utils.enums.LineType.METRO;
+import static com.example.longyuan.mybus.utils.enums.LineType.RER;
+import static com.example.longyuan.mybus.utils.enums.LineType.TRAMWAY;
 
 /**
  * Created by LONGYUAN on 2018/3/25.
@@ -47,7 +53,7 @@ public class MainFragment extends Fragment implements MainContract.View{
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(getContext(),MetroActivity.class);
+                //Intent intent = new Intent(getContext(),LineActivity.class);
 
                // intent.putExtra(EXTRA_VIDEO_ID,item.getVideoId());
 
@@ -91,10 +97,47 @@ public class MainFragment extends Fragment implements MainContract.View{
     }
 
     @OnClick(R.id.imageView_tramway)
-    public void submit(View view) {
+    public void getTramway(View view) {
         // TODO submit data to server...
         //Toast.makeText(getContext(),"tramway",Toast.LENGTH_LONG).show();
 
+       displayLines(TRAMWAY);
 
+    }
+
+    @OnClick(R.id.imageView_bus)
+    public void getBus(View view) {
+        // TODO submit data to server...
+        //Toast.makeText(getContext(),"tramway",Toast.LENGTH_LONG).show();
+
+        displayLines(BUS);
+
+    }
+
+    @OnClick(R.id.imageView_metro)
+    public void getMetro(View view) {
+        // TODO submit data to server...
+        //Toast.makeText(getContext(),"tramway",Toast.LENGTH_LONG).show();
+
+        displayLines(METRO);
+
+    }
+
+    @OnClick(R.id.imageView_rer)
+    public void getRer(View view) {
+        // TODO submit data to server...
+        //Toast.makeText(getContext(),"tramway",Toast.LENGTH_LONG).show();
+
+        displayLines(RER);
+
+    }
+
+    private void displayLines(int lineType){
+
+        Intent intent = new Intent(getContext(),LineActivity.class);
+
+        intent.putExtra(EXTRA_LINE_TYPE,lineType);
+
+        getContext().startActivity(intent);
     }
 }
